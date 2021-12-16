@@ -1,0 +1,26 @@
+<project name="proj1.jar" default="all">
+	<target name="make.dirs" description="Make some dirs">
+		<mkdir dir="build"/>
+		<mkdir dir="build/class"/>
+	</target>
+
+	<target name="compileProj1" description="compile proj1" depends="make.dirs">
+		<javac destdir="build/class">
+			<src path="src"/>
+		</javac>
+	</target>
+
+	<target name="proj1.jar" description="make proj1.jar jar file" depends="compileProj1">
+		<jar destfile="../lib/proj1/proj1.jar">
+			<fileset dir="build/class">
+				<include name="**/*.class"/>
+			</fileset>
+			<manifest>
+				<attribute name="Main-Class" value="org.bsuir.gr994051.tamkovich.laba4.proj1.Main"/>
+			</manifest>
+		</jar>
+	</target>
+
+	<target name="all" description="Do the build" depends="proj1.jar"/>
+
+</project>
