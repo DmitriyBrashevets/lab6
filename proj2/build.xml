@@ -15,6 +15,9 @@
 			<fileset dir="build/class">
 				<include name="**/*.class"/>
 			</fileset>
+			<fileset dir="../lib/proj1">
+				<include name="proj1.jar"/>
+			</fileset>
 			<manifest>
 				<attribute name="Main-Class" value="org.bsuir.gr994051.tamkovich.laba4.proj2.Main"/>
 			</manifest>
